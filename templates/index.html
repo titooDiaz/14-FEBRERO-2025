@@ -11,6 +11,8 @@
 </head>
 <body>
     <img src="{{ url_for('video_feed') }}" width="640" height="480">
+
+    <!--Maximizar el tamano de la pantalla para un efecto mas imersivo-->
     <style>
         *{
             margin: 0;
@@ -25,7 +27,7 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        window.scrollTo(0, 1);  // Intenta ocultar la barra superior en algunos navegadores móviles
+        window.scrollTo(0, 1);  // Intenta ocultar la barra superior en algunos navegadores moviles
     });
 </script>
 

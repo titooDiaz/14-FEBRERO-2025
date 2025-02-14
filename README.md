@@ -52,5 +52,5 @@ Creado por Miguel.
 
 ---
 
-¡Disfruta del proyecto! 🚀
+¡Disfruta del proyecto, No sean toxicos! 🚀
 

@@ -8,12 +8,13 @@ app = Flask(__name__)
 mp_face_detection = mp.solutions.face_detection
 face_detection = mp_face_detection.FaceDetection(min_detection_confidence=0.5)
 
+# cargar emoji enojado
 emoji = cv2.imread("angry_emoji.png", cv2.IMREAD_UNCHANGED)
 
 if emoji.shape[-1] == 4:  # Convertir si tiene canal alpha
     emoji = cv2.cvtColor(emoji, cv2.COLOR_BGRA2BGR)
 
-cap = cv2.VideoCapture(0)  # Usa la cámara de la PC donde corre Flask
+cap = cv2.VideoCapture(0)  # Usa la camara de la PC donde corre Flask, si te sale error prueba 1 o 2 o 3
 
 def generate_frames():
     while True:
@@ -39,7 +40,7 @@ def generate_frames():
                     frame[y:y2, x:x2] = resized_emoji[:y2-y, :x2-x, :3]
 
                     cv2.putText(frame, "No puedes mirar a otra!", (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 
-                                0.9, (0, 0, 255), 2)
+                                2, (0, 0, 255), 3)
 
         _, buffer = cv2.imencode('.jpg', frame)
         frame_bytes = buffer.tobytes()
